@@ -1,16 +1,20 @@
 {
-  "name": "Generador-Ge-Planetas",
+  "name": "generador-de-planetas",
   "version": "1.0.0",
   "description": "API que crea nombres y descripciones de planetas de ciencia ficción",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "test": "jest"
+    "test": "jest",
+    "lint": "eslint ."
   },
   "dependencies": {
     "express": "^4.19.2"
   },
   "devDependencies": {
+    "@eslint/js": "^9.32.0",
+    "eslint": "^9.32.0",
+    "globals": "^16.3.0",
     "jest": "^29.7.0",
     "supertest": "^7.0.0"
   }
