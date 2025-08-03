@@ -1,23 +1,24 @@
-name: Verificar Calidad de Código (Lint)
+name: "Verificar Calidad de Código (Lint)"
+
 on: [push]
 
 jobs:
   lint:
-    name: Ejecutar Linter
+    name: "Ejecutar Linter"
     runs-on: ubuntu-latest
-
+    
     steps:
-      - name: Descargar el repositorio
+      - name: "Descargar el código"
         uses: actions/checkout@v4
 
-      - name: Configurar Node.js
+      - name: "Configurar Node.js"
         uses: actions/setup-node@v4
         with:
           node-version: '22.x'
           cache: 'npm'
 
-      - name: Instalar dependencias
+      - name: "Instalar dependencias"
         run: npm install
 
-      - name: Ejecutar el linter
+      - name: "Ejecutar Linter con ESLint"
         run: npm run lint

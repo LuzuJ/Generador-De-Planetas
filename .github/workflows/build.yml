@@ -1,23 +1,24 @@
-name: Construir Aplicación de Planetas
+name: "Construir Aplicación"
+
 on: [push]
 
 jobs:
   build:
-    name: Construir Imagen Docker
-    runs-on: ubuntu-latest 
+    name: "Construir para Producción"
+    runs-on: ubuntu-latest
 
     steps:
-      - name: Descargar el repositorio
+      - name: "Descargar el código"
         uses: actions/checkout@v4
 
-      - name: Configurar Node.js
+      - name: "Configurar Node.js"
         uses: actions/setup-node@v4
         with:
           node-version: '22.x'
           cache: 'npm'
 
-      - name: Instalar dependencias
+      - name: "Instalar dependencias"
         run: npm install
 
-      - name: Construir la imagen de Docker
-        run: docker build -t generador-de-planetas .
+      - name: "Construir la aplicación con Vite"
+        run: npm run build
